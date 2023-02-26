@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiQRCodeGenerator.MainPage"
+             Title="QR Code Generator"
+             BackgroundColor="White">
+			 
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="10" 
+            Padding="30" 
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center">
+
+            <Label 
+                Text="Enter Data"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Enter Data"
+                FontSize="18"
+                HorizontalOptions="FillAndExpand" />
+
+            <Frame BorderColor="LightSlateGray"
+                   Padding="10,0">
+                <Entry
+                x:Name="InputText"
+                Text=""
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Enter data here..."
+                FontSize="18"
+                HorizontalOptions="FillAndExpand" />
+            </Frame>
+
+            <Button 
+                x:Name="GenerateBtn"
+                Text="CLICK ME"
+                SemanticProperties.Hint="Generate the QR code when you click"
+                Clicked="OnGenerateClicked"
+                HorizontalOptions="FillAndExpand" />
+            <Frame BorderColor="LightSlateGray"
+                   BackgroundColor="White"
+                   Padding="10">
+                <Image
+                x:Name="QrCodeImage"
+                HeightRequest="200"
+                WidthRequest="200"/>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+ 
+</ContentPage>
